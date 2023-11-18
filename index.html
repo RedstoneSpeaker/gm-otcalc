@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Dein OnTime-Bonus: <code id="bonus">bereit</code> €</h3>
+    <input id="input" type="number" placeholder="Deine Gesamt-OT">
+    <input type="submit" value="Berechnen" onclick="calculate()">
+    <script>
+        function calculate() {
+            let input = parseInt(document.getElementById("input").value) + 23
+
+            let bonus = 240 * Math.log(input) - 749
+            console.log(`Bonus: ${bonus}`)
+
+            bonus = Math.round(bonus)
+
+            document.getElementById("bonus").innerText = bonus
+        }
+    </script>
+</body>
+</html>
